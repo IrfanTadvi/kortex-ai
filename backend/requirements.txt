@@ -1,0 +1,49 @@
+# Core Framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+pydantic==2.9.0
+pydantic-settings==2.5.0
+python-multipart==0.0.9
+
+# LLM & Embeddings
+openai==1.50.0
+anthropic==0.34.0
+sentence-transformers==3.1.0
+transformers==4.44.0
+torch==2.4.0
+
+# Vector Database
+faiss-cpu==1.8.0
+pinecone-client==5.0.0
+
+# Document Processing
+PyPDF2==3.0.1
+python-docx==1.1.2
+unstructured==0.15.0
+tiktoken==0.7.0
+
+# Search & Retrieval
+rank-bm25==0.2.2
+numpy==1.26.4
+
+# Cross-encoder for re-ranking
+sentence-transformers==3.1.0
+
+# Database
+sqlalchemy==2.0.35
+aiosqlite==0.20.0
+
+# Utilities
+python-dotenv==1.0.1
+loguru==0.7.2
+httpx==0.27.2
+aiofiles==24.1.0
+uuid6==2024.7.10
+
+# Streaming
+sse-starlette==2.1.0
+
+# Testing & Evaluation
+pytest==8.3.3
+pytest-asyncio==0.24.0
+ragas==0.1.0

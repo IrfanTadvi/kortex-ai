@@ -1,0 +1,140 @@
+AI Knowledge Copilot - Company Policies & Procedures
+
+Section 1: Employee Handbook Overview
+===========================================
+
+Welcome to TechCorp Inc. This handbook outlines our company policies, procedures, and guidelines. All employees are expected to read and understand these policies upon joining the organization.
+
+Our mission is to build innovative technology solutions that empower businesses worldwide. We value integrity, collaboration, innovation, and excellence in everything we do.
+
+Section 2: Paid Time Off (PTO) Policy
+===========================================
+
+All full-time employees receive the following PTO benefits:
+- 20 days of paid vacation per year (accrued monthly)
+- 10 paid sick days per year
+- 5 personal days per year
+- 12 company holidays per year
+
+PTO Carry-Over Policy:
+Unused vacation days can be carried over to the next year, with a maximum of 5 days. Sick days do not carry over. Personal days do not carry over.
+
+Requesting Time Off:
+- Submit PTO requests through the HR portal at least 2 weeks in advance for vacations of 3+ days
+- Sick leave requires notification to your manager before your shift starts
+- Manager approval is required for all PTO except sick leave
+
+Section 3: Remote Work Policy
+===========================================
+
+TechCorp supports a hybrid work model:
+- Employees can work remotely up to 3 days per week
+- Core office hours are Tuesday and Thursday (10 AM - 4 PM)
+- Remote work from outside your home country requires VP approval
+- Reliable internet connection (minimum 50 Mbps) is required
+- Company will provide a $500 annual home office stipend
+
+Section 4: Performance Review Process
+===========================================
+
+Performance reviews are conducted quarterly:
+- Q1 Review (January): Goal setting and alignment
+- Q2 Review (April): Mid-year check-in and feedback
+- Q3 Review (July): Progress assessment
+- Q4 Review (October): Annual performance evaluation
+
+Rating Scale:
+1 - Below Expectations
+2 - Partially Meets Expectations
+3 - Meets Expectations
+4 - Exceeds Expectations
+5 - Exceptional Performance
+
+Promotion Criteria:
+- Minimum rating of 4 for two consecutive quarters
+- Demonstrated leadership and mentorship
+- Technical or domain expertise growth
+- Manager and skip-level manager recommendation
+
+Section 5: Engineering Standards
+===========================================
+
+Code Review Policy:
+- All code changes require a minimum of 2 peer approvals
+- Reviews should be completed within 24 business hours
+- Use conventional commit messages
+- No self-approvals allowed
+
+Testing Requirements:
+- Minimum 80% code coverage for all services
+- Unit tests required for all business logic
+- Integration tests for API endpoints
+- E2E tests for critical user flows
+
+Deployment Process:
+- All deployments go through CI/CD pipeline
+- Blue-green deployment strategy for zero downtime
+- Automated rollback on failure
+- Production deployments only on weekdays (9 AM - 3 PM)
+- Change freeze during company events and holidays
+
+Section 6: Security Policies
+===========================================
+
+Access Control:
+- Multi-factor authentication (MFA) required for all systems
+- Password minimum: 12 characters, mixed case, numbers, symbols
+- Password rotation: Every 90 days
+- Principle of least privilege for all access grants
+
+Data Classification:
+- Public: Marketing materials, blog posts
+- Internal: Internal wikis, Slack messages
+- Confidential: Customer data, financial records
+- Restricted: PII, credentials, security configurations
+
+Incident Response:
+- Severity 1 (Critical): Page on-call immediately, war room within 15 minutes
+- Severity 2 (High): Response within 1 hour, team lead notification
+- Severity 3 (Medium): Response within 4 hours, tracked in Jira
+- Severity 4 (Low): Response within 24 hours, backlog item
+
+Section 7: Benefits Summary
+===========================================
+
+Health Insurance:
+- Company covers 90% of premium for employees
+- Company covers 75% of premium for dependents
+- Dental and vision included
+- HSA contribution: $1,500/year from company
+
+401(k) Retirement:
+- Company matches 100% up to 4% of salary
+- Immediate vesting
+- Traditional and Roth options available
+
+Professional Development:
+- $3,000 annual learning budget per employee
+- Conference attendance: up to 2 per year
+- Certification reimbursement for relevant certifications
+- Internal tech talks every Friday at 4 PM
+
+Section 8: Onboarding Process
+===========================================
+
+Week 1:
+- Day 1: IT setup, HR orientation, team introduction
+- Day 2: Company culture and values workshop
+- Day 3: Technical environment setup and access provisioning
+- Day 4: Team-specific onboarding and project overview
+- Day 5: First 30-60-90 day plan creation with manager
+
+Week 2-4:
+- Shadow team members on current projects
+- Complete required compliance training
+- Set up 1-on-1 meetings with key stakeholders
+- Submit first code review (engineering) or first deliverable
+- Complete onboarding checklist in HR portal
+
+Buddy System:
+Each new hire is assigned an onboarding buddy from their team who serves as the primary point of contact for the first 90 days.

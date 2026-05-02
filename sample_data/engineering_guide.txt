@@ -1,0 +1,114 @@
+TechCorp Engineering Architecture Guide
+========================================
+
+1. System Architecture Overview
+---------------------------------
+
+Our platform follows a microservices architecture deployed on AWS. The core services include:
+
+API Gateway (Kong):
+- Rate limiting: 1000 requests/minute per client
+- Authentication: JWT-based with refresh tokens
+- Request routing and load balancing
+
+Core Services:
+- User Service: Authentication, authorization, profile management
+- Product Service: Product catalog, inventory, pricing
+- Order Service: Order processing, payment integration
+- Notification Service: Email, SMS, push notifications
+- Analytics Service: Event tracking, reporting, dashboards
+
+Data Layer:
+- PostgreSQL: Primary transactional database (RDS)
+- Redis: Caching layer and session storage (ElastiCache)
+- Elasticsearch: Full-text search and log aggregation
+- S3: Object storage for files and media
+
+Message Queue:
+- Amazon SQS for async task processing
+- Amazon SNS for event fan-out
+- Dead letter queues for failed message handling
+
+2. API Design Standards
+-----------------------
+
+All APIs follow RESTful conventions:
+- Use plural nouns for resources: /api/v1/users, /api/v1/orders
+- HTTP methods: GET (read), POST (create), PUT (update), DELETE (remove)
+- Pagination: cursor-based for large datasets
+- Versioning: URL-based (v1, v2)
+- Error responses: RFC 7807 Problem Details format
+
+Rate Limits:
+- Public endpoints: 100 requests/minute
+- Authenticated endpoints: 1000 requests/minute
+- Admin endpoints: 5000 requests/minute
+
+3. Database Conventions
+-----------------------
+
+Naming:
+- Tables: snake_case, plural (users, order_items)
+- Columns: snake_case (first_name, created_at)
+- Indexes: idx_{table}_{columns}
+- Foreign keys: fk_{table}_{referenced_table}
+
+Required columns for all tables:
+- id: UUID primary key
+- created_at: timestamp with timezone
+- updated_at: timestamp with timezone
+- deleted_at: timestamp (soft delete)
+
+Migration Policy:
+- All schema changes through versioned migrations
+- No destructive migrations in production without review
+- Backward-compatible changes only during deployment windows
+
+4. Monitoring and Observability
+-------------------------------
+
+Metrics (Datadog):
+- Application metrics: request latency, error rates, throughput
+- Infrastructure metrics: CPU, memory, disk, network
+- Business metrics: orders/minute, user signups, revenue
+
+Logging (ELK Stack):
+- Structured JSON logging
+- Log levels: DEBUG, INFO, WARN, ERROR, FATAL
+- Correlation IDs for request tracing
+- PII masking in all log outputs
+
+Alerting:
+- P1: Page on-call (PagerDuty) - response in 5 minutes
+- P2: Slack notification - response in 30 minutes
+- P3: Email notification - response in 4 hours
+- P4: Ticket creation - response in 24 hours
+
+SLA Targets:
+- API availability: 99.95%
+- API latency P99: < 500ms
+- Error rate: < 0.1%
+- Recovery time: < 15 minutes for P1
+
+5. CI/CD Pipeline
+-----------------
+
+Pipeline Stages:
+1. Code Commit -> Lint + Format Check
+2. Unit Tests (parallel)
+3. Integration Tests
+4. Security Scan (Snyk + SonarQube)
+5. Docker Build
+6. Deploy to Staging
+7. E2E Tests on Staging
+8. Manual Approval (for production)
+9. Blue-Green Deploy to Production
+10. Smoke Tests + Health Checks
+11. Monitoring for 30 minutes
+12. Full traffic switch or rollback
+
+Tools:
+- GitHub Actions for CI
+- ArgoCD for CD
+- Terraform for infrastructure as code
+- Helm charts for Kubernetes deployments
